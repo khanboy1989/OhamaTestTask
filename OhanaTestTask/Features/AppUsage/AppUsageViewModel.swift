@@ -28,6 +28,7 @@ final class AppUsageViewModel {
     func fetchAppUsages() {
         viewState.send(.loading)
         
+        // To simulate loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             guard let self else {
                 self?.viewState.send(.error(error: "Loading Error"))
